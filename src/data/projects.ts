@@ -28,7 +28,7 @@ export const projects: Project[] = [
   },
   {
   title: 'Real-Time Pothole Detection',
-  category: ['AI/ML','Computer Vision'],
+  category: ['AI/ML'],
   description:
     'Developed a real-time pothole detection system using YOLOv5 and a camera module connected to a Raspberry Pi 4. The system detects potholes from live road footage, records their GPS coordinates, and sends the location data to a central department to support faster inspection and repair.',
   technologies: [
