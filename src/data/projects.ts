@@ -73,7 +73,7 @@ export const projects: Project[] = [
 
   {
   title: 'RAG PDF Question Answering',
-  category: ['Generative AI', 'RAG'],
+  category: ['Generative AI', 'AI/ML'],
   description:
     'Built a Retrieval-Augmented Generation system for querying multiple PDF documents. The pipeline extracts document content, generates semantic embeddings with Gemini, stores vectors in Pinecone, retrieves relevant context using similarity search, and uses Groq-powered inference to generate accurate, context-aware answers.',
   technologies: [

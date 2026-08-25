@@ -1,4 +1,60 @@
-import { useState, type FormEvent } from 'react'; import { ArrowRight, Mail, MapPin } from 'lucide-react';
-import { personalInfo } from '../data/personal'; import { SectionTitle } from '../components/SectionTitle'; import { SocialLinks } from '../components/SocialLinks'; import { Reveal } from '../components/Reveal';
+import { BriefcaseBusiness as Linkedin, Mail, MapPin } from 'lucide-react';
+import { Reveal } from '../components/Reveal';
+import { SectionTitle } from '../components/SectionTitle';
+import { SocialLinks } from '../components/SocialLinks';
 import { contactContent } from '../data/contact';
-export function Contact(){const [sent,setSent]=useState(false);const c=contactContent;const submit=(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();if(e.currentTarget.checkValidity())setSent(true)};return <section id="contact" className="section contact-section"><div className="container"><Reveal><SectionTitle eyebrow={c.eyebrow} title={c.title} description={c.description}/></Reveal><div className="contact-grid"><Reveal><div className="contact-copy"><h3>{c.lead}</h3><p>{c.body}</p><div className="contact-detail"><Mail/><div><span>Email</span><strong>{personalInfo.email||'Add email in personal.ts'}</strong></div></div><div className="contact-detail"><MapPin/><div><span>Location</span><strong>{personalInfo.location}</strong></div></div><SocialLinks labeled/></div></Reveal><Reveal><form className="contact-form" onSubmit={submit}><div className="field-row"><label>Name<input required minLength={2} name="name" placeholder={c.form.namePlaceholder}/></label><label>Email<input required type="email" name="email" placeholder={c.form.emailPlaceholder}/></label></div><label>Subject<input required minLength={3} name="subject" placeholder={c.form.subjectPlaceholder}/></label><label>Message<textarea required minLength={10} rows={6} name="message" placeholder={c.form.messagePlaceholder}/></label><button className="button primary" type="submit">{c.form.submitLabel} <ArrowRight size={17}/></button>{sent&&<p className="form-note" role="status">Form validated successfully. Connect Formspree, EmailJS, or your API in Contact.tsx to deliver messages.</p>}<small>This demo validates locally and does not transmit data.</small></form></Reveal></div></div></section>}
+import { personalInfo } from '../data/personal';
+
+export function Contact() {
+  const c = contactContent;
+
+  return (
+    <section id="contact" className="section contact-section">
+      <div className="container">
+        <Reveal>
+          <SectionTitle eyebrow={c.eyebrow} title={c.title} description={c.description} />
+        </Reveal>
+
+        <div className="contact-grid">
+          <Reveal>
+            <div className="contact-copy">
+              <h3>{c.lead}</h3>
+              <p>{c.body}</p>
+
+              <a className="contact-detail" href={`mailto:${personalInfo.email}`}>
+                <Mail />
+                <div>
+                  <span>Email</span>
+                  <strong>{personalInfo.email}</strong>
+                </div>
+              </a>
+
+              <a
+                className="contact-detail"
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin />
+                <div>
+                  <span>LinkedIn</span>
+                  <strong>Anuj Krishna Phuyal</strong>
+                </div>
+              </a>
+
+              <div className="contact-detail">
+                <MapPin />
+                <div>
+                  <span>Location</span>
+                  <strong>{personalInfo.location}</strong>
+                </div>
+              </div>
+
+              <SocialLinks labeled />
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}

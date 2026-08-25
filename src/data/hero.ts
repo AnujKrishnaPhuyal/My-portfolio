@@ -8,8 +8,8 @@ export const heroContent = {
   monogramLabel: 'AI · ML',
   actions: {
     work: 'View My Work',
-    research: 'View Research',
-    resume: 'Download Resume',
+    // research: 'View Research',
+    // resume: 'Download Resume',
     contact: 'Contact Me',
   },
 };

@@ -25,12 +25,19 @@ export function EducationExperience() {
               <GraduationCap />
             </div>
             <div>
-              <span className="kicker">Education</span>
-              <h3>{education.degree}</h3>
-              <h4>{education.school}</h4>
-              <div className="muted-row">
-                <span>{education.dates}</span>
-                <span>{education.gpa}</span>
+              <div className="experience-head">
+                <div>
+                  <span className="kicker">Education</span>
+                  <h3>{education.degree}</h3>
+                  <h4>{education.school}</h4>
+                </div>
+                <div className="experience-where">
+                  <span>{education.dates}</span>
+                  <span>
+                    <MapPin size={14} />
+                    {education.location}
+                  </span>
+                </div>
               </div>
               <p>{education.detail}</p>
               <div className="tags">
