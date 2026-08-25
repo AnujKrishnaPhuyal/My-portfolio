@@ -1,0 +1,4 @@
+Anuj Phuyal — Resume Placeholder
+
+Replace this file with resume.pdf in the public directory, then update
+the resume path in src/data/personal.ts to /resume.pdf.

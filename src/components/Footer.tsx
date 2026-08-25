@@ -1,0 +1,2 @@
+import { personalInfo } from '../data/personal'; import { SocialLinks } from './SocialLinks';
+export function Footer(){return <footer><div className="container footer-inner"><div><strong>{personalInfo.name}</strong><p>AI/ML Engineer · Software Engineer · Researcher</p></div><SocialLinks/><p>© {new Date().getFullYear()} {personalInfo.name}<br/><span>Built with React, TypeScript & CSS</span></p></div></footer>}

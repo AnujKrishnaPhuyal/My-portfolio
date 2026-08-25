@@ -1,0 +1,2 @@
+import { useEffect, useState } from 'react'; import { ArrowUp } from 'lucide-react';
+export function BackToTop(){const [show,setShow]=useState(false);useEffect(()=>{const onScroll=()=>setShow(scrollY>700);addEventListener('scroll',onScroll);return()=>removeEventListener('scroll',onScroll)},[]);return <button className={`back-top ${show?'visible':''}`} onClick={()=>scrollTo({top:0,behavior:'smooth'})} aria-label="Back to top"><ArrowUp/></button>}
